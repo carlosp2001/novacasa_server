@@ -1,5 +1,6 @@
 const superagent = require('superagent');
 const mysql = require('mysql');
+const url = require('url');
 
 const http = require('http');
 
@@ -11,7 +12,7 @@ const server = http.createServer((req, res) => {
     const {query, pathname: pathName} = url.parse(req.url, true);
     // console.log(pathName);
     // Overview page
-    if (pathName === '/' || pathName === '/overview') {
+    if (pathName === '/') {
         res.writeHead(200, {
             'Content-type': 'text/html',
         });
@@ -22,7 +23,7 @@ const server = http.createServer((req, res) => {
     } 
 });
 
-server.listen(80, '127.0.0.1', () => {
+server.listen(3001, () => {
     console.log('Listening to requests on port 8000');
 });
 
