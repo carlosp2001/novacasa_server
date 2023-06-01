@@ -52,6 +52,7 @@ const server = http.createServer((req, res) => {
                     if (err) throw err;
                     let resultArray = Array.from(result);
                     let html = resultArray[0].post_content;
+                    console.log(process.env);
 
                     con.query(
                         `SELECT t.* FROM test_novacasahn_com.wp_d3d8n7_postmeta t where t.post_id = ${query.id} LIMIT 501`,
@@ -89,7 +90,8 @@ const server = http.createServer((req, res) => {
                                     'https://graph.facebook.com/v17.0/198639315962847/products'
                                 )
                                 .query({
-                                    access_token: process.env.access_token,
+                                    access_token:
+                                        '12345',
                                 })
                                 .send({
                                     name,
