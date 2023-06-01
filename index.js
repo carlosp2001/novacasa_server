@@ -89,8 +89,7 @@ const server = http.createServer((req, res) => {
                                     'https://graph.facebook.com/v17.0/198639315962847/products'
                                 )
                                 .query({
-                                    access_token:
-                                        'EAAJWZBDFSBdgBAM3Hx2vuoPVFTYBZATZAizSnpZCfn7qyxxEUPXZBc3jv8MfZCDwVI88urMu9UR8fLXPqDJcFELTqdtr5fC7IZAPYoxFy8RzHvNO4Ny9EnAdXc98AP0TeZAYnchTxaB8rkRWIpZBRDu7U28nnkR1aIPvp8SEzTiP3IwZDZD',
+                                    access_token: process.env.access_token,
                                 })
                                 .send({
                                     name,
